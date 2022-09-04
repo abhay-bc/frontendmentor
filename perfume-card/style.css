@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,700&display=swap');
+
+
+/* ===============
+    Selecting default 
+=============== */
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Fraunces', serif;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+
+body{
+    --theme-bgcol: rgb(243, 234, 227);
+    background-color: var(--theme-bgcol);
+    height: 100vh;
+    display: flex;
+}
+
+/* ===============
+   Css Style: Perfume card
+=============== */
+
+.perfume-card{
+    margin: auto;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 0;
+    grid-template-areas: 'img info';
+    height: 450px;
+    padding: 0;
+    border-radius: 1.2rem;
+    overflow: hidden;
+}
+
+/* ===============
+   Css Style: image 
+=============== */
+.perfume-img{
+    grid-area: img;
+    width: 300px;
+}
+
+.img{
+    width: 100%;
+    height: 450px;
+}
+
+/* =============== 
+Css Style: discription 
+=============== */
+
+.perfume-info-container{
+    grid-area: info;
+    --white: hsl(0, 0%, 100%);
+    background-color: var(--white);
+    padding: 2rem;
+}
+
+.perfume-info {
+    width: 100%;
+    height: 99%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.perfume-info .info-title{
+    letter-spacing: .4rem;
+    font-size: 1rem;
+}
+
+.perfume-info .perfume-name{
+    --title-info: hsl(212, 21%, 14%);
+    color: var(--title-info);
+    font-size: 2.1rem;
+    line-height: 1;
+}
+
+.info-title, .discription, .price .discount{
+    --discription: hsl(228, 12%, 48%);
+    color: var(--discription);
+}
+
+.perfume-info .discription{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.price{
+    display: flex;
+    gap: .4rem;
+}
+
+.price .curentPrice{
+    --color: hsl(158, 35%, 37%);
+    color: var(--color);
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.price .discount{
+  text-decoration: line-through;
+}
+
+.cart-btn{
+    --btn-bg-col: hsl(158, 35%, 37%);
+    border: 2px solid var(--btn-bg-col);
+    padding:0 .7rem .4rem;
+    background-color: var(--btn-bg-col);
+    font-size:  1.2rem;
+    border-radius: .8rem;
+    color: white;
+    position: relative;
+}
+
+.cart-btn img{
+    margin: .3rem;
+    position: relative;
+    transform: translateY(50%);
+}
+
+/* ===============
+    Css Style: Mobile layout
+=============== */
+@media (max-width: 862px) {
+    .perfume-card{
+        grid-template-rows: 250px 350px;
+        grid-template-columns: 100%;
+        grid-template-areas: 'img' 'info';
+        width: 350px;
+        height: 600px;
+    }
+    .perfume-img, .img{
+        width: 100%;
+        height: 250px;
+    }
+
+    .perfume-info-container{
+        width: 100%;
+        padding: .4rem 1.6rem;
+    }
+
+    .perfume-info .perfume-name{
+        font-size: 1.9rem;
+    }
+
+    .perfume-info .discription{
+        font-size: .9rem;
+    }
+}
