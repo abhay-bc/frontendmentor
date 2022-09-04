@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+/* ----------------
+    Variables
+---------------- */
+
+:root{
+--device-width-mobile: 375px;
+--device-width-desktop: 1440px;
+
+/* == Primary Colors == */
+--paleblue: hsl(225, 100%, 94%);
+--brightblue: hsl(245, 75%, 52%);
+
+/* == neutrals == */
+--very-paleblue: hsl(225, 100%, 98%);
+--desaturated-blue: hsl(224, 23%, 55%);
+--dark-blue: hsl(223, 47%, 23%);
+
+/* == font-sizes == */
+--fs-para: 14px;
+
+/* == font-weights == */
+--fw-500: 500;
+--fw-700: 700;
+--fw-900: 900;
+}
+
+
+/* -----------------------
+    Seting Default styles
+----------------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+    color: var(--desaturated-blue);
+    text-align: center;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    background: #e0e8ff url('pattern-background-mobile.svg') no-repeat fixed;
+}
+
+/* -----------------------
+Css Style: container 
+----------------------- */
+
+.grid{
+    display: grid;
+}
+
+.flex{
+    display: flex;
+}
+
+/* -----------------------
+Css Style: styles
+----------------------- */
+.main-container{
+    height: 100vh;
+    width: 100%;
+}
+
+.container{
+    margin: auto;
+    width: 350px;
+    height: 530px;
+    border-radius: 1.3rem;
+    overflow: hidden;
+    background-color: white;
+}
+
+.box, .content-box, .padding{
+    height: 100%;
+}
+
+.box.grid {
+    grid-template-rows: 170px 355px;
+    grid-template-columns: 100%;
+    grid-template-areas: 'img' 'discription' ;
+}
+
+.img-box{
+    grid-area: 'img';
+}
+
+.img-box, .img-box img{
+    width: 100%;
+    height: 170px;
+}
+
+.title-box h1{
+    font-weight: var(--fw-900);   
+    color: var(--dark-blue);
+    font-size: 1.4rem;
+}
+
+.discription p{
+    font-weight: var(--fw-500);
+    font-size: var(--fs-para);
+}
+
+.padding{
+    grid-area: 'discription';
+    padding: 1.3rem 1.8rem;
+}
+
+.content-box, .padding{
+    width: 100%;
+}
+
+.content-box{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.annual-plan{
+    width: 100%;
+    height: 70px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--very-paleblue);
+    border-radius: .7rem;
+}
+
+.annual-plan span:first-child{
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.annual-plan span:first-child, .annual-plan img{
+    width: 40px; height: 40px;
+}
+
+.annual-plan span:nth-child(2){
+    color: var(--dark-blue);
+}
+
+.annual-plan .change{
+    font-size: 14px;
+    color: var(--brightblue);
+    cursor: pointer;
+}
+
+.annual-plan .change:hover{
+    text-decoration: underline;
+    transform: scale(1.1, 1.1);
+}
+
+.annual-plan span:nth-child(2) span{
+    color: var(--desaturated-blue);
+    font-weight: var(--fw-500);
+}
+
+.btn{
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    background-color: var(--brightblue);
+    border-radius: .7rem;
+    box-shadow: 0 5px 10px gainsboro,
+    0 10px 5px var(--paleblue);
+}
+
+.btn:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.btn:active{
+    transform: scale(0.8, 0.8);
+}
+
+.btn span{
+    width: 100%;
+    color: var(--very-paleblue);
+}
+
+.fw-700{
+    font-weight: var(--fw-700);
+    font-size: 14px;
+}
+
+.cancel *{
+    color: var(--dark-blue);
+    cursor: pointer;
+}
+
+.cancel:hover *{
+    color: var(--brightblue);
+}
+
+/* -----------------------
+    Media queries
+----------------------- */
+
+@media (min-width: 375px){
+    body{
+        background-image: url("pattern-background-desktop.svg");
+    }
+}
