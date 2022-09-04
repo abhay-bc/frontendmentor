@@ -207,5 +207,6 @@ Css Style: styles
 @media (min-width: 375px){
     body{
         background-image: url("pattern-background-desktop.svg");
+        background-size: 100% 50vmin;
     }
 }
